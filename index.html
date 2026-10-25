@@ -139,15 +139,16 @@
       color: #f472b6;
     }
 
-    /* Терминал взлома имени */
+    /* Терминал в стиле Arch / CachyOS + Hyprland (kitty / fish) */
     .terminal-card {
-      background: #07090e;
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      border-radius: 16px;
-      padding: 14px;
+      background: #090b10;
+      border: 1.5px solid rgba(124, 92, 255, 0.55);
+      border-radius: 12px;
+      padding: 12px 14px;
       margin-bottom: 20px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
+      box-shadow: 0 0 18px rgba(124, 92, 255, 0.15);
     }
 
     .terminal-header {
@@ -155,27 +156,47 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 10px;
-      padding-bottom: 8px;
+      padding-bottom: 7px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--muted);
+      color: #9ca3af;
       font-size: 11px;
     }
 
-    .dots {
+    .term-title {
       display: flex;
-      gap: 6px;
+      align-items: center;
+      gap: 7px;
+      color: #c4b5fd;
+      font-weight: 600;
     }
 
-    .dots span {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
+    .wm-badge {
+      background: rgba(124, 92, 255, 0.18);
+      color: #a78bfa;
+      border: 1px solid rgba(124, 92, 255, 0.35);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+
+    .prompt-user {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    .prompt-path {
+      color: #a78bfa;
+    }
+
+    .prompt-arrow {
+      color: #10b981;
+      font-weight: 700;
     }
 
     .terminal-body {
-      color: #10b981;
-      line-height: 1.55;
-      min-height: 44px;
+      color: #d1fae5;
+      line-height: 1.6;
+      min-height: 48px;
     }
 
     .hack-btn {
@@ -188,7 +209,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
       font-weight: 600;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s;
     }
@@ -222,7 +243,7 @@
       font-size: 13px;
       line-height: 1.45;
       color: #e5e7eb;
-      padding: 7px 0;
+      padding: 8px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       display: flex;
       gap: 10px;
@@ -391,19 +412,20 @@
         </div>
       </div>
 
-      <!-- Секретный блок с расшифровкой имени Селин -->
+      <!-- Терминал в стиле твоей системы (CachyOS / Hyprland / kitty / katletka@asadik) -->
       <div class="terminal-card">
         <div class="terminal-header">
-          <div class="dots">
-            <span style="background:#ef4444"></span>
-            <span style="background:#f59e0b"></span>
-            <span style="background:#10b981"></span>
+          <div class="term-title">
+            <span>❯_ kitty</span>
+            <span style="color:#6b7280">•</span>
+            <span>katletka@asadik: ~/secret-name</span>
           </div>
-          <span>linux-root@asatik: ~/secret-name</span>
+          <span class="wm-badge">Hyprland</span>
         </div>
         <div class="terminal-body" id="terminalOutput">
-          > Статус имени: ЗАСЕКРЕЧЕНО (подруги под подпиской о неразглашении).<br>
-          > Готовность к обходу защиты: 100%
+          <span class="prompt-user">katletka@asadik</span> <span class="prompt-path">~/secret-name</span> <span class="prompt-arrow">❯</span> status --target="@sin_150"<br>
+          [!] Имя агента: ЗАСЕКРЕЧЕНО (подруги под подпиской о неразглашении).<br>
+          [*] Готовность к обходу защиты: 100%
         </div>
         <button class="hack-btn" id="hackBtn" onclick="decryptName()">
           🔓 Запустить взлом секретного имени
@@ -415,7 +437,7 @@
         <li>
           <span>🧛‍♀️</span>
           <div>
-            <strong>Вампирский тайминг (строго до 16:20):</strong> гуляем при дневном свете, чтобы 115-летний вампир от 12 августа вернулся домой вовремя и родители были спокойны.
+            <strong>Вампирский тайминг:</strong> гуляем при дневном свете, чтобы 114-летний вампир от 12 августа вернулся домой вовремя и родители были спокойны.
           </div>
         </li>
         <li>
@@ -425,15 +447,9 @@
           </div>
         </li>
         <li>
-          <span>🥘</span>
+          <span>🥊</span>
           <div>
-            <strong>Гастро-кодекс:</strong> никакого жирного и никакого оливье. Обсуждение голубцов, селёдки под шубой, кильки в томате и побега попугая Жако в рисовые поля — приветствуется.
-          </div>
-        </li>
-        <li>
-          <span>💻</span>
-          <div>
-            <strong>Дуэль на Python:</strong> ноутбуки для ринга оставляем дома, сегодня перемирие (рабочие таски организатора официально подвинуты ради тебя).
+            <strong>Спарринг:</strong> ноутбуки для ринга оставляем дома, сегодня перемирие.
           </div>
         </li>
       </ul>
@@ -450,13 +466,13 @@
           </div>
         </div>
 
-        <div class="route-card" onclick="selectRoute(this, 'Набережная Анхора + парк Навруз')">
+        <div class="route-card" onclick="selectRoute(this, 'Городской вайб (прогулка по центру)')">
           <div class="route-title">
-            <span>🏮 Вариант 2: Набережная и Навруз</span>
-            <span class="mono">Красивый вид</span>
+            <span>🌆 Вариант 2: Городской вайб</span>
+            <span class="mono">Центр</span>
           </div>
           <div class="route-desc">
-            Неспешный маршрут у воды вдоль Анхора и по уютным улочкам этно-парка, где в четверг днём почти никого нет.
+            Неспешный маршрут по уютным зелёным улочкам и бульварам центра, где в четверг днём тихо и атмосферно.
           </div>
         </div>
 
@@ -466,7 +482,7 @@
             <span class="mono">VIP-логистика</span>
           </div>
           <div class="route-desc">
-            Гуляем там, откуда тебе будет максимально удобно и быстро уехать ровно в 16:20.
+            Гуляем там, где тебе будет максимально комфортно и откуда потом удобно добираться домой.
           </div>
         </div>
       </div>
@@ -476,7 +492,7 @@
           ✅ Принять официальное приглашение
         </button>
         <button class="btn-decline" id="declineBtn" onmouseover="runAway(event)" ontouchstart="runAway(event)" onclick="runAway(event)">
-          ❌ Отклонить (учить Python)
+          ❌ Отклонить
         </button>
       </div>
     </div>
@@ -524,7 +540,6 @@
     const declinePhrases = [
       '❌ Ошибка 403: Отказ не предусмотрен ТЗ',
       '🦜 Даже попугай Жако против отказа!',
-      '🥟 А как же обещанные голубцы?!',
       '🧛‍♀️ Вампирам нельзя сидеть дома в четверг!',
       '🔒 Кнопка заблокирована через Linux терминал'
     ];
@@ -542,11 +557,13 @@
       btn.disabled = true;
       btn.textContent = '⏳ Взлом базы данных...';
 
-      out.innerHTML = '> sudo decrypt --target="@sin_150" --dob="12.08"<br>> Обход NDA подруг... УСПЕШНО.';
+      out.innerHTML =
+        '<span class="prompt-user">katletka@asadik</span> <span class="prompt-path">~/secret-name</span> <span class="prompt-arrow">❯</span> sudo decrypt --target="@sin_150" --dob="12.08"<br>' +
+        '[*] Обход NDA подруг... УСПЕШНО.';
 
       setTimeout(() => {
         out.innerHTML =
-          '> <strong>ДОСТУП ПОЛУЧЕН!</strong><br>' +
+          '<span class="prompt-user">katletka@asadik</span> <span class="prompt-path">~/secret-name</span> <span class="prompt-arrow">❯</span> <strong>ДОСТУП ПОЛУЧЕН!</strong><br>' +
           '> Настоящее имя: <span style="color:#f472b6;font-weight:700;">СЕЛИН (Shomirzayeva Selin)</span> ❤️<br>' +
           '> Примечание: ты правда думала, что айтишник на Linux не вспомнит твоё имя? 😉';
         rec.innerHTML = 'Селин <span class="mono">(агент π/3)</span> 💖';
