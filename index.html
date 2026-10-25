@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Протокол № π/3 — Официальное приглашение</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d14;
+      --card: rgba(20, 24, 38, 0.88);
+      --border: rgba(255, 255, 255, 0.1);
+      --accent: #ff4d8d;
+      --accent-2: #7c5cff;
+      --green: #10b981;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 15% 15%, rgba(124, 92, 255, 0.22), transparent 45%),
+                  radial-gradient(circle at 85% 80%, rgba(255, 77, 141, 0.2), transparent 45%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px 14px 48px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(124, 92, 255, 0.16);
+      border: 1px solid rgba(124, 92, 255, 0.4);
+      color: #c4b5fd;
+      margin-bottom: 16px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.5; }
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #f9a8d4 50%, #c4b5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .meta-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-size: 13.5px;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 7px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+      gap: 12px;
+    }
+
+    .meta-row:last-child {
+      border-bottom: none;
+    }
+
+    .meta-label {
+      color: var(--muted);
+      font-size: 12.5px;
+      flex-shrink: 0;
+    }
+
+    .meta-val {
+      text-align: right;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      color: #f472b6;
+    }
+
+    /* Терминал взлома имени */
+    .terminal-card {
+      background: #07090e;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dots span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+
+    .terminal-body {
+      color: #10b981;
+      line-height: 1.55;
+      min-height: 44px;
+    }
+
+    .hack-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px 14px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      color: #34d399;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .hack-btn:hover {
+      background: rgba(16, 185, 129, 0.25);
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #c4b5fd;
+      margin: 20px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rules-list {
+      list-style: none;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+    }
+
+    .rules-list li {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #e5e7eb;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .rules-list li:last-child {
+      border-bottom: none;
+    }
+
+    .route-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .route-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .route-card.active {
+      border-color: var(--accent);
+      background: rgba(255, 77, 141, 0.1);
+      box-shadow: 0 0 20px rgba(255, 77, 141, 0.18);
+    }
+
+    .route-title {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .route-desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      min-height: 115px;
+    }
+
+    .btn-accept {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(255, 77, 141, 0.35);
+      transition: transform 0.15s ease;
+    }
+
+    .btn-accept:active {
+      transform: scale(0.98);
+    }
+
+    .btn-decline {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    /* Посадочный талон (финал) */
+    #ticketView {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ticket {
+      background: linear-gradient(160deg, rgba(30, 35, 58, 0.95), rgba(17, 20, 34, 0.95));
+      border: 1.5px solid rgba(255, 77, 141, 0.5);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 16px 0 20px;
+      position: relative;
+    }
+
+    .stamp {
+      display: inline-block;
+      border: 2px solid var(--green);
+      color: var(--green);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      transform: rotate(-3deg);
+      margin-bottom: 12px;
+    }
+
+    .tg-link {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #2aabee 0%, #229ed9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 10px 25px rgba(42, 171, 238, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="mainView">
+      <div class="badge-top">
+        <span class="pulse-dot"></span>
+        Протокол № π/3 • Лично в руки
+      </div>
+
+      <h1>Официальное приглашение на прогулку</h1>
+      <p class="subtitle">
+        Так как «по переписке не считается», отдел разработки и ночного Linux-администрирования выпустил персональное постановление.
+      </p>
+
+      <div class="meta-box">
+        <div class="meta-row">
+          <span class="meta-label">Организатор:</span>
+          <span class="meta-val">Асадик <span class="mono">(@feashelo)</span></span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Кому:</span>
+          <span class="meta-val" id="recipientName">Агент <span class="mono">π/3</span> (<span class="mono">@sin_150</span>)</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Мат. проверка:</span>
+          <span class="meta-val"><span class="mono">sin(150°) = cos(π/3) = 0.5</span> ✨</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Дата и слот:</span>
+          <span class="meta-val">Четверг, 29 окт • <span class="mono">13:30 – 16:20</span></span>
+        </div>
+      </div>
+
+      <!-- Секретный блок с расшифровкой имени Селин -->
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <div class="dots">
+            <span style="background:#ef4444"></span>
+            <span style="background:#f59e0b"></span>
+            <span style="background:#10b981"></span>
+          </div>
+          <span>linux-root@asatik: ~/secret-name</span>
+        </div>
+        <div class="terminal-body" id="terminalOutput">
+          > Статус имени: ЗАСЕКРЕЧЕНО (подруги под подпиской о неразглашении).<br>
+          > Готовность к обходу защиты: 100%
+        </div>
+        <button class="hack-btn" id="hackBtn" onclick="decryptName()">
+          🔓 Запустить взлом секретного имени
+        </button>
+      </div>
+
+      <div class="section-title">📋 Регламент и условия встречи</div>
+      <ul class="rules-list">
+        <li>
+          <span>🧛‍♀️</span>
+          <div>
+            <strong>Вампирский тайминг (строго до 16:20):</strong> гуляем при дневном свете, чтобы 115-летний вампир от 12 августа вернулся домой вовремя и родители были спокойны.
+          </div>
+        </li>
+        <li>
+          <span>🎙</span>
+          <div>
+            <strong>Аудиопротокол:</strong> пронос диктофона для записи спец-допроса и отчёта двум лучшим подругам официально разрешён (память рыбки Дори учтена).
+          </div>
+        </li>
+        <li>
+          <span>🥘</span>
+          <div>
+            <strong>Гастро-кодекс:</strong> никакого жирного и никакого оливье. Обсуждение голубцов, селёдки под шубой, кильки в томате и побега попугая Жако в рисовые поля — приветствуется.
+          </div>
+        </li>
+        <li>
+          <span>💻</span>
+          <div>
+            <strong>Дуэль на Python:</strong> ноутбуки для ринга оставляем дома, сегодня перемирие (рабочие таски организатора официально подвинуты ради тебя).
+          </div>
+        </li>
+      </ul>
+
+      <div class="section-title">📍 Выбери маршрут на четверг</div>
+      <div class="route-cards">
+        <div class="route-card active" onclick="selectRoute(this, 'Парковый чилл (Экопарк / Голубые купола)')">
+          <div class="route-title">
+            <span>🌿 Вариант 1: Парковый чилл</span>
+            <span class="mono">0% суеты</span>
+          </div>
+          <div class="route-desc">
+            Прогулка по красивым осенним аллеям (Экопарк или Голубые купола), шуршание листьями и разговор обо всём на свете.
+          </div>
+        </div>
+
+        <div class="route-card" onclick="selectRoute(this, 'Набережная Анхора + парк Навруз')">
+          <div class="route-title">
+            <span>🏮 Вариант 2: Набережная и Навруз</span>
+            <span class="mono">Красивый вид</span>
+          </div>
+          <div class="route-desc">
+            Неспешный маршрут у воды вдоль Анхора и по уютным улочкам этно-парка, где в четверг днём почти никого нет.
+          </div>
+        </div>
+
+        <div class="route-card" onclick="selectRoute(this, 'Секретный маршрут (выберем на месте у метро)')">
+          <div class="route-title">
+            <span>✨ Вариант 3: Свой / Удобный по метро</span>
+            <span class="mono">VIP-логистика</span>
+          </div>
+          <div class="route-desc">
+            Гуляем там, откуда тебе будет максимально удобно и быстро уехать ровно в 16:20.
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-accept" onclick="acceptInvite()">
+          ✅ Принять официальное приглашение
+        </button>
+        <button class="btn-decline" id="declineBtn" onmouseover="runAway(event)" ontouchstart="runAway(event)" onclick="runAway(event)">
+          ❌ Отклонить (учить Python)
+        </button>
+      </div>
+    </div>
+
+    <!-- Экран билета после согласия -->
+    <div id="ticketView">
+      <div class="badge-top">
+        <span class="pulse-dot"></span>
+        Заявка успешно согласована
+      </div>
+      <h1>Встреча назначена! 🎉</h1>
+      <p class="subtitle">
+        Твой официальный посадочный талон сформирован. Осталось только отправить подтверждение организатору.
+      </p>
+
+      <div class="ticket">
+        <div class="stamp">УТВЕРЖДЕНО • ОФИЦИАЛЬНО</div>
+        <div class="meta-row">
+          <span class="meta-label">Участница:</span>
+          <span class="meta-val">Селин (<span class="mono">π/3</span>) 💖</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Спутник:</span>
+          <span class="meta-val">Асадик</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Время:</span>
+          <span class="meta-val">Четверг, 13:30 – 16:20</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Маршрут:</span>
+          <span class="meta-val" id="chosenRouteText">Парковый чилл (Экопарк / Голубые купола)</span>
+        </div>
+      </div>
+
+      <a id="tgConfirmLink" class="tg-link" href="#" target="_blank">
+        ✈️ Отправить подтверждение Асадику в ТГ
+      </a>
+    </div>
+  </div>
+
+  <script>
+    let selectedRoute = 'Парковый чилл (Экопарк / Голубые купола)';
+    let declineCount = 0;
+    const declinePhrases = [
+      '❌ Ошибка 403: Отказ не предусмотрен ТЗ',
+      '🦜 Даже попугай Жако против отказа!',
+      '🥟 А как же обещанные голубцы?!',
+      '🧛‍♀️ Вампирам нельзя сидеть дома в четверг!',
+      '🔒 Кнопка заблокирована через Linux терминал'
+    ];
+
+    function selectRoute(el, routeName) {
+      document.querySelectorAll('.route-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      selectedRoute = routeName;
+    }
+
+    function decryptName() {
+      const out = document.getElementById('terminalOutput');
+      const btn = document.getElementById('hackBtn');
+      const rec = document.getElementById('recipientName');
+      btn.disabled = true;
+      btn.textContent = '⏳ Взлом базы данных...';
+
+      out.innerHTML = '> sudo decrypt --target="@sin_150" --dob="12.08"<br>> Обход NDA подруг... УСПЕШНО.';
+
+      setTimeout(() => {
+        out.innerHTML =
+          '> <strong>ДОСТУП ПОЛУЧЕН!</strong><br>' +
+          '> Настоящее имя: <span style="color:#f472b6;font-weight:700;">СЕЛИН (Shomirzayeva Selin)</span> ❤️<br>' +
+          '> Примечание: ты правда думала, что айтишник на Linux не вспомнит твоё имя? 😉';
+        rec.innerHTML = 'Селин <span class="mono">(агент π/3)</span> 💖';
+        btn.textContent = '✅ Личность рассекречена: Селин';
+      }, 1100);
+    }
+
+    function runAway(e) {
+      if (e) e.preventDefault();
+      const btn = document.getElementById('declineBtn');
+      btn.textContent = declinePhrases[declineCount % declinePhrases.length];
+      declineCount++;
+      const x = (Math.random() - 0.5) * 90;
+      const y = (Math.random() - 0.5) * 35;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function acceptInvite() {
+      document.getElementById('mainView').style.display = 'none';
+      document.getElementById('ticketView').style.display = 'block';
+      document.getElementById('chosenRouteText').textContent = selectedRoute;
+
+      const msg = `Официальное приглашение принято! ✅\nУчастница: агент π/3 (да-да, Селин 😏)\nСлот: Четверг, 13:30–16:20\nВыбранный маршрут: ${selectedRoute}\nДиктофон заряжен!`;
+      document.getElementById('tgConfirmLink').href =
+        `https://t.me/feashelo?text=${encodeURIComponent(msg)}`;
+    }
+  </script>
+</body>
+</html>
