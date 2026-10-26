@@ -63,13 +63,13 @@
       cursor: pointer;
     }
 
-    /* Печатная карточка (размер идеально подходит к плитке шоколада или в конверт) */
+    /* Печатная карточка (формат A6: 148x102 мм — идеально входит в конверт C6 114x162 мм) */
     .card {
-      width: 155mm;
+      width: 148mm;
       background: #ffffff;
       border: 2px solid #111827;
-      border-radius: 14px;
-      padding: 22px 24px;
+      border-radius: 12px;
+      padding: 16px 20px;
       position: relative;
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
@@ -79,13 +79,13 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid #111827;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
+      padding-bottom: 9px;
+      margin-bottom: 12px;
     }
 
     .dept {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10.5px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #4b5563;
@@ -94,72 +94,72 @@
     .doc-num {
       font-family: 'JetBrains Mono', monospace;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 11.5px;
       background: #111827;
       color: #fff;
-      padding: 4px 10px;
+      padding: 3px 9px;
       border-radius: 6px;
     }
 
     h1 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .lead {
-      font-size: 12.5px;
+      font-size: 11.5px;
       color: #374151;
-      line-height: 1.45;
-      margin-bottom: 16px;
+      line-height: 1.4;
+      margin-bottom: 12px;
     }
 
     .content-grid {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 18px;
+      gap: 14px;
       align-items: center;
       background: #f9fafb;
       border: 1px dashed #9ca3af;
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 16px;
+      border-radius: 10px;
+      padding: 11px 14px;
+      margin-bottom: 12px;
     }
 
     .info-list {
       display: flex;
       flex-direction: column;
-      gap: 7px;
-      font-size: 12.5px;
+      gap: 5px;
+      font-size: 11.5px;
     }
 
     .info-row span.lbl {
       color: #6b7280;
       display: inline-block;
-      width: 95px;
+      width: 90px;
     }
 
     .info-row strong {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
+      font-size: 11.5px;
     }
 
     .qr-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
       background: #fff;
-      padding: 8px;
+      padding: 6px;
       border: 1.5px solid #111827;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
     .qr-box img {
-      width: 108px;
-      height: 108px;
+      width: 96px;
+      height: 96px;
       display: block;
     }
 
