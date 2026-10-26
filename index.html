@@ -408,7 +408,7 @@
         </div>
         <div class="meta-row">
           <span class="meta-label">Дата и слот:</span>
-          <span class="meta-val">Четверг, 29 окт • <span class="mono">13:30 – 16:20</span></span>
+          <span class="meta-val">Пятница, 30 окт • <span class="mono">13:30 – 16:20</span></span>
         </div>
       </div>
 
@@ -454,7 +454,7 @@
         </li>
       </ul>
 
-      <div class="section-title">📍 Выбери маршрут на четверг</div>
+      <div class="section-title">📍 Выбери маршрут на пятницу</div>
       <div class="route-cards">
         <div class="route-card active" onclick="selectRoute(this, 'Парковый чилл (Экопарк / Голубые купола)')">
           <div class="route-title">
@@ -472,7 +472,7 @@
             <span class="mono">Центр</span>
           </div>
           <div class="route-desc">
-            Неспешный маршрут по уютным зелёным улочкам и бульварам центра, где в четверг днём тихо и атмосферно.
+            Неспешный маршрут по уютным зелёным улочкам и бульварам центра, где в пятницу днём тихо и атмосферно.
           </div>
         </div>
 
@@ -520,7 +520,7 @@
         </div>
         <div class="meta-row">
           <span class="meta-label">Время:</span>
-          <span class="meta-val">Четверг, 13:30 – 16:20</span>
+          <span class="meta-val">Пятница, 13:30 – 16:20</span>
         </div>
         <div class="meta-row">
           <span class="meta-label">Маршрут:</span>
@@ -540,7 +540,7 @@
     const declinePhrases = [
       '❌ Ошибка 403: Отказ не предусмотрен ТЗ',
       '🦜 Даже попугай Жако против отказа!',
-      '🧛‍♀️ Вампирам нельзя сидеть дома в четверг!',
+      '🧛‍♀️ Вампирам нельзя сидеть дома в пятницу!',
       '🔒 Кнопка заблокирована через Linux терминал'
     ];
 
@@ -586,7 +586,7 @@
       document.getElementById('ticketView').style.display = 'block';
       document.getElementById('chosenRouteText').textContent = selectedRoute;
 
-      const msg = `Официальное приглашение принято! ✅\nУчастница: агент π/3 (да-да, Селин 😏)\nСлот: Четверг, 13:30–16:20\nВыбранный маршрут: ${selectedRoute}\nДиктофон заряжен!`;
+      const msg = `Официальное приглашение принято! ✅\nУчастница: агент π/3 (да-да, Селин 😏)\nСлот: Пятница, 13:30–16:20\nВыбранный маршрут: ${selectedRoute}\nДиктофон заряжен!`;
       document.getElementById('tgConfirmLink').href =
         `https://t.me/feashelo?text=${encodeURIComponent(msg)}`;
     }
